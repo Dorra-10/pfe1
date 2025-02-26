@@ -1,52 +1,62 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>WTI Dashboard Template</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+	<link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{url('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
+	<link rel="stylesheet" href="{{url('assets/plugins/fontawesome/css/all.min.css')}}">
+	<link rel="stylesheet" href="{{url('assets/css/feathericon.min.css')}}">
+	<link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css">
+	<link rel="stylesheet" href="{{url('assets/plugins/morris/morris.css')}}">
+	<link rel="stylesheet" href="{{url('assets/css/style.css')}}"> </head>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+<body>
+<div class="main-wrapper login-body">
+		<div class="login-wrapper">
+			<div class="container">
+				<div class="loginbox">
+					<div class="login-left"> <img class="img-fluid" src="assets/img/logo.png" alt="Logo"> </div>
+					<div class="login-right">
+						<div class="login-right-wrap">
+							<h1 class="mb-3">Register</h1>
+							<form  method="POST" action="{{ route('register') }}">
+                            @csrf
+								<div class="form-group">
+									<input class="form-control" :value="__('Name')" name="name"  type="text" placeholder="Name"> </div>
+								<div class="form-group">
+									<input class="form-control"  type="email" name="email" :value="__('Email')" placeholder="Email"> </div>
+								<div class="form-group">
+									<input class="form-control" type="password"
+                                    name="password"  :value="__('Password')"  placeholder="Password"> </div>
+								<div class="form-group">
+									<input class="form-control" :value="__('Confirm Password')"   type="password"
+                                    name="password_confirmation" placeholder="Confirm Password"> </div>
+								<div class="form-group mb-0">
+									<button class="btn btn-primary btn-block" type="submit">Register</button>
+								</div>
+							</form>
+							<div class="login-or"> <span class="or-line"></span> <span class="span-or">or</span> </div>
+							<div class="social-login"> <span>Register with</span> <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="google"><i class="fab fa-google"></i></a> </div>
+							<div class="text-center dont-have">Already have an account? <a href="{{ route('login') }}">Login</a> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{{url('assets/js/jquery-3.5.1.min.j')}}s"></script>
+	<script src="{{url('assets/js/popper.min.js')}}"></script>
+	<script src="{{url('assets/js/bootstrap.min.js')}}"></script>
+	<script src="{{url('assets/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+	<script src="{{url('assets/plugins/raphael/raphael.min.js')}}"></script>
+	<script src="{{url('assets/plugins/morris/morris.min.js')}}"></script>
+	<script src="{{url('assets/js/script.js')}}"></script>
+</body>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>
