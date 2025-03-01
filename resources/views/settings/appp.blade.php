@@ -33,7 +33,7 @@
 <body>
 	<div class="main-wrapper">
 		@include('layouts.header')
-		@include('layouts.navbar')
+		@include('settings.sidebar')
 		
 		@yield('content')
 	</div>

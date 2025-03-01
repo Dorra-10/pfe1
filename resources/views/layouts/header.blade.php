@@ -17,7 +17,7 @@
                         <p class="text-muted mb-0">Admin</p>
                     </div>
                 </div>
-                <a class="dropdown-item" href="{{route('profile.edit')}}">My Profile</a>
+                <a class="dropdown-item" href="{{route('layouts.profile')}}">My Profile</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a class="dropdown-item" href="{{ route('logout') }}"

@@ -20,6 +20,14 @@ class ProfileController extends Controller
             'user' => $request->user(),
         ]);
     }
+    public function profile(){
+        return view('layouts.profile');
+    
+    }
+    public function editprofile(){
+        return view('layouts.editprofile');
+    
+    }
 
     /**
      * Update the user's profile information.
