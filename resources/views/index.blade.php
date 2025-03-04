@@ -4,11 +4,11 @@
 <div class="page-wrapper">
     <div class="content container-fluid">
         <div class="page-header">
-            <div class="row align-items-center">
+            <div class="row align-items-center">          
                 <div class="col">
                     <div class="mt-5">
                         <h4 class="card-title float-left mt-2">Users</h4>
-                        <a href="#" class="btn btn-primary float-right veiwbutton">Add user</a>
+                        <a href="{{ route('adduser.create') }}" class="btn btn-primary float-right veiwbutton">Add user</a>
                     </div>
                 </div>
             </div>
@@ -54,20 +54,5 @@
             </div>
         </div>
     </div>
-    <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <img src="{{asset('assets/img/profiles/avatar-01.jpg')}}" alt="" width="50" height="46">
-                    <h3 class="delete_class">Are you sure want to delete this User?</h3>
-                    <div class="m-t-20">
-                        <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-                        <a href="{{ url('users/'.$user->id.'/delete') }}">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+  
 @endsection

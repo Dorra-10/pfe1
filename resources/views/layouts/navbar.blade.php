@@ -15,7 +15,7 @@
                     </a>
                     <ul class="submenu_class" style="display: none;">
                         <li><a href="{{ url('users') }}"> Tous les Utilisateurs</a></li>
-                        <li><a href="#"> Ajouter utilisateur </a></li>
+                        <li><a href="{{ route('adduser.create') }}"> Ajouter utilisateur </a></li>
                     </ul>
                 </li>
 

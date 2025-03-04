@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/editprofile', [ProfileController::class, 'editprofile'])->name('layouts.editprofile');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/adduser', [UserController::class, 'create'])->name('adduser.create');
+    Route::post('/adduser', [UserController::class, 'store'])->name('adduser.store');
     Route::get('/allbooking', [BookingController::class, 'allbooking'])->name('formbooking.allbooking');
     Route::get('/editbooking', [BookingController::class, 'editbooking'])->name('formbooking.editbooking');
     Route::get('/addbooking', [BookingController::class, 'addbooking'])->name('formbooking.addbooking');
